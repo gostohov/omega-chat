@@ -1,0 +1,23 @@
+services:
+  redis:
+    image: "redis:6.2.5"
+    ports:
+      - "6379:6379"
+  cassandra:
+    image: "cassandra:latest"
+    ports:
+      - "9042:9042"
+  mysql:
+    image: "mysql:latest"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: omega_chat
+  rabbitmq-stomp:
+    image: "jorgeacetozi/rabbitmq-stomp:3.6"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      - "61613:61613"
+      
